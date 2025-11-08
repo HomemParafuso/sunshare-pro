@@ -21,7 +21,7 @@ export function Sidebar() {
   return (
     <aside
       className={cn(
-        "h-screen bg-gradient-to-b from-[hsl(210,75%,8%)] to-[hsl(210,70%,12%)] border-r border-border/50 transition-all duration-300 flex flex-col",
+        "h-screen bg-gradient-to-b from-[hsl(210,70%,12%)] to-[hsl(210,65%,18%)] border-r border-border/50 transition-all duration-300 flex flex-col",
         collapsed ? "w-16" : "w-64"
       )}
     >
