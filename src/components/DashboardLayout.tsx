@@ -8,12 +8,12 @@ interface DashboardLayoutProps {
 
 export function DashboardLayout({ children }: DashboardLayoutProps) {
   return (
-    <div className="flex min-h-screen w-full bg-muted/10">
+    <div className="flex min-h-screen w-full bg-muted/20">
       <Sidebar />
       
       <div className="flex-1 flex flex-col">
         {/* Header */}
-        <header className="h-16 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 flex items-center justify-between px-6">
+        <header className="h-16 border-b border-border/30 bg-background flex items-center justify-between px-6 shadow-sm">
           <div>
             <h1 className="text-xl font-semibold text-foreground">Dashboard</h1>
             <p className="text-xs text-muted-foreground">Bem-vindo ao sistema Renovva Mais</p>

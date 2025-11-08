@@ -51,7 +51,7 @@ export default function Dashboard() {
         {/* Stats Grid */}
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {stats.map((stat) => (
-            <Card key={stat.title} className="hover:shadow-lg transition-shadow border-border/50">
+            <Card key={stat.title} className="bg-background shadow-sm hover:shadow-md transition-shadow border-border/40">
               <CardHeader className="flex flex-row items-center justify-between pb-2 space-y-0">
                 <CardTitle className="text-sm font-medium text-muted-foreground">
                   {stat.title}
@@ -71,7 +71,7 @@ export default function Dashboard() {
         {/* Recent Activity */}
         <div className="grid gap-6 md:grid-cols-2">
           {/* Faturas Recentes */}
-          <Card className="border-border/50">
+          <Card className="bg-background shadow-sm border-border/40">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <TrendingUp className="w-5 h-5 text-primary" />
@@ -106,7 +106,7 @@ export default function Dashboard() {
           </Card>
 
           {/* Compromissos */}
-          <Card className="border-border/50">
+          <Card className="bg-background shadow-sm border-border/40">
             <CardHeader>
               <CardTitle>Compromissos de Hoje</CardTitle>
               <CardDescription>Clique no ícone de atualizar para carregar os compromissos</CardDescription>
@@ -125,7 +125,7 @@ export default function Dashboard() {
         </div>
 
         {/* Revenue Chart Placeholder */}
-        <Card className="border-border/50">
+        <Card className="bg-background shadow-sm border-border/40">
           <CardHeader>
             <CardTitle>Receita dos últimos 6 meses</CardTitle>
             <CardDescription>
