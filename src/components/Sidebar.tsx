@@ -3,6 +3,10 @@ import { NavLink } from "@/components/NavLink";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 
+interface SidebarProps {
+  onOpenSettings?: () => void;
+}
+
 const menuItems = [
   { icon: LayoutDashboard, label: "Dashboard", path: "/dashboard" },
   { icon: Zap, label: "Usinas", path: "/usinas" },
@@ -12,10 +16,9 @@ const menuItems = [
   { icon: BarChart3, label: "Relatórios", path: "/relatorios" },
   { icon: UserPlus, label: "CRM", path: "/crm" },
   { icon: Bell, label: "Notificações", path: "/notificacoes" },
-  { icon: Settings, label: "Configurações", path: "/configuracoes" },
 ];
 
-export function Sidebar() {
+export function Sidebar({ onOpenSettings }: SidebarProps) {
   const [collapsed, setCollapsed] = useState(false);
 
   return (
@@ -53,6 +56,15 @@ export function Sidebar() {
             {!collapsed && <span className="text-sm font-medium">{item.label}</span>}
           </NavLink>
         ))}
+        
+        {/* Configurações Button */}
+        <button
+          onClick={onOpenSettings}
+          className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary/50 transition-all duration-200"
+        >
+          <Settings className="w-5 h-5 flex-shrink-0" />
+          {!collapsed && <span className="text-sm font-medium">Configurações</span>}
+        </button>
       </nav>
 
       {/* Footer with animated sun */}

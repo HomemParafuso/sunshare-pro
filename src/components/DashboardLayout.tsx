@@ -1,15 +1,19 @@
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 import { Sidebar } from "./Sidebar";
 import { Bell, User } from "lucide-react";
+import { FormulaBuilderModal } from "./FormulaBuilderModal";
 
 interface DashboardLayoutProps {
   children: ReactNode;
 }
 
 export function DashboardLayout({ children }: DashboardLayoutProps) {
+  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+
   return (
     <div className="flex min-h-screen w-full bg-muted/10">
-      <Sidebar />
+      <Sidebar onOpenSettings={() => setIsSettingsOpen(true)} />
+      <FormulaBuilderModal open={isSettingsOpen} onOpenChange={setIsSettingsOpen} />
       
       <div className="flex-1 flex flex-col">
         {/* Header */}
